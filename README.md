@@ -82,7 +82,9 @@ python prepare.py
 python -m torch.distributed.launch train.py --config_file 'config/bert_config.json'
 ```
 
-<img src="images/bert_train.png" style="zoom: 33%;" />
+<div align = "center">
+  <img src="images/bert_train.png" width = "50%"/>
+</div>
 
 #### 1.2 RNN训练
 
@@ -92,7 +94,9 @@ python -m torch.distributed.launch train.py --config_file 'config/bert_config.js
 CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch train.py --config_file 'config/rnn_config.json'
 ```
 
-<img src="images/rnn_train.png" style="zoom: 33%;" />
+<div align = center>
+  <img src="images/rnn_train.png" width = "50%"/>
+</div>
 
 #### 1.3 训练成果
 
