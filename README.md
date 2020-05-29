@@ -1,6 +1,6 @@
 # SMP-CAIL2020：论辩挖掘
 
-本项目为**中国法研杯司法人工智能挑战赛（CAIL2020）**论辩挖掘赛道参考代码和模型。
+本项目为 **中国法研杯司法人工智能挑战赛（CAIL2020）** 论辩挖掘赛道参考代码和模型。
 
 主要包含两个基线模型：BERT和RNN。
 
@@ -9,7 +9,7 @@
 #### 0.0 下载本项目
 
 ```
-git clone 
+git clone https://github.com/gaoyixu/CAIL2020-Argument-Mining.git
 ```
 
 #### 0.1 数据集
@@ -18,13 +18,13 @@ git clone
 
 本项目中只使用了
 
-​	``SMP-CAIL2020-train.csv``： 包含了2449对裁判文书中的互动论点对。分别包含以下维度：
+`SMP-CAIL2020-train.csv`： 包含了2449对裁判文书中的互动论点对。分别包含以下维度：
 
-  		``id``： 论点对id
-  		``text_id``： 裁判文书id
-  		``sc``： 论点对中诉方论点
-  		``A/B/C/D/E``： 给出的五句候选辩方论点
-  		``answer``： 辩方正确论点
+  - `id`： 论点对id
+  - `text_id`： 裁判文书id
+  - `sc`： 论点对中诉方论点
+  - `A/B/C/D/E`： 给出的五句候选辩方论点
+  - `answer`： 辩方正确论点
 
 划分训练集、验证集：
 
@@ -82,7 +82,7 @@ python prepare.py
 python -m torch.distributed.launch train.py --config_file 'config/bert_config.json'
 ```
 
-<img src="/Users/gaoyixu/Library/Application Support/typora-user-images/image-20200529203741706.png" alt="image-20200529203741706" style="zoom: 33%;" />
+<img src="images/bert_train.png" style="zoom: 33%;" />
 
 #### 1.2 RNN训练
 
@@ -92,7 +92,7 @@ python -m torch.distributed.launch train.py --config_file 'config/bert_config.js
 CUDA_VISIBLE_DEVICES=0 python -m torch.distributed.launch train.py --config_file 'config/rnn_config.json'
 ```
 
-<img src="/Users/gaoyixu/Library/Application Support/typora-user-images/image-20200529203820771.png" alt="image-20200529203820771" style="zoom: 33%;" />
+<img src="images/rnn_train.png" style="zoom: 33%;" />
 
 #### 1.3 训练成果
 
